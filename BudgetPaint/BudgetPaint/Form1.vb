@@ -33,6 +33,7 @@
 
         End If
         Me.BackColor = Color.White
+        c = Color.Black
     End Sub
 
     Private Sub PictureBox1_Paint(sender As Object, e As PaintEventArgs) Handles PictureBox1.Paint
@@ -45,11 +46,13 @@
         ColorDialog1.ShowDialog()
         c = ColorDialog1.Color
         Button1.BackColor = c
+        w = TrackBar1.Value
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
         c = sender.backcolor
+        w = TrackBar1.Value * 2
     End Sub
 
     Private Sub TrackBar1_Scroll(sender As Object, e As EventArgs) Handles TrackBar1.Scroll
@@ -64,9 +67,10 @@
         PictureBox1.Image = bmp
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub saveButton_Click(sender As Object, e As EventArgs) Handles saveButton.Click
         SaveFileDialog1.ShowDialog()
         PictureBox1.Image.Save(SaveFileDialog1.FileName)
 
     End Sub
+
 End Class
