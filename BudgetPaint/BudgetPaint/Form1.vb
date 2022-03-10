@@ -30,8 +30,9 @@
                 g.Clear(Color.White)
             End Using
             PictureBox1.Image = bmp
-        End If
 
+        End If
+        Me.BackColor = Color.White
     End Sub
 
     Private Sub PictureBox1_Paint(sender As Object, e As PaintEventArgs) Handles PictureBox1.Paint

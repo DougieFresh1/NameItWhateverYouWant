@@ -5,7 +5,7 @@
     Dim m_b As Point
 
     Public Sub New(i As Image, a As Point, b As Point)
-        Pen = Pens.Red
+        Pen = Pens.Black
         m_image = i
         m_a = a
         m_b = b
