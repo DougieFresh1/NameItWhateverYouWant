@@ -1,5 +1,7 @@
 ﻿Public Class Rect
     Public Property Pen As Pen
+    Public Property fill As Boolean
+
     Dim m_image As Image
     Dim m_a As Point
     Dim m_b As Point
@@ -13,7 +15,11 @@
     End Sub
     Public Sub Draw()
         Using g As Graphics = Graphics.FromImage(m_image)
-            g.DrawRectangle(Pen, m_a.X, m_a.Y, W, H)
+            If fill Then
+                g.FillRectangle(New SolidBrush(Pen.Color), m_a.X, m_a.Y, W, H)
+            Else
+                g.DrawRectangle(Pen, m_a.X, m_a.Y, W, H)
+            End If
         End Using
 
     End Sub

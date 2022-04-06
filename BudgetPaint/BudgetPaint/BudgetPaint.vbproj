@@ -99,6 +99,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="N-gon.vb" />
+    <Compile Include="Pbox.vb" />
     <Compile Include="polygon.vb" />
     <Compile Include="Rect.vb" />
   </ItemGroup>
@@ -124,6 +125,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fedora.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

@@ -23,6 +23,7 @@
             If type = "Rectangle" Then
                 d = New Rect(PictureBox1.Image, m_Previous, e.Location)
                 d.Pen = New Pen(c, w)
+                d.fill = CheckBox1.Checked
                 d.H = TrackBar2.Value
                 d.W = TrackBar3.Value
             End If
@@ -42,6 +43,12 @@
                 d.Pen = New Pen(c, w)
                 d.sides = TrackBar4.Value
                 d.radius = TrackBar5.Value
+            End If
+            If type = "Picture" Then
+                d = New Pbox(PictureBox1.Image, m_Previous, e.Location)
+                d.picture = PictureBox2.Image
+                d.h = TrackBar6.Value
+                d.w = TrackBar6.Value
             End If
             m_shapes.Add(d)
             PictureBox1.Invalidate()
@@ -125,5 +132,9 @@
 
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         type = "N-gon"
+    End Sub
+
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
+        type = "Picture"
     End Sub
 End Class
